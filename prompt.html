@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>	
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>使用notification.prompt()方法显示对话框</title>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+	// 等待加载PhoneGap
+	document.addEventListener("deviceready", onDeviceReady, false); 
+	// PhoneGap加载完毕
+	function onDeviceReady() {
+		//使用alert()方法显示一个提示
+	}
+	//从对话框中获得下一步操作的数据
+	function onPrompt() {
+		// result是从Prompt对话框中获取的值，buttonIndex存放被点击的按钮的索引
+		if(results.buttonIndex==0){
+			//results.input1中存放的是编辑框中输入的值
+			alert("你要了"+results.input1+"杯咖啡");
+		}
+	}
+	// 显示一个定制的对话框
+	function showPrompt() {
+		 navigator.notification.prompt(
+			'请问你需要喝杯咖啡么？',                    // 显示信息
+			onPrompt,								 // 警告被忽视的回调函数
+			'将想要的数量输入在对话框内',				 // 标题
+			['要','不要']                                  // 按钮名称
+		);
+	}
+</script>
+</head>
+<body>
+	<h1 onclick="showPrompt();">显示对话框</h1>
+</body>
+</html>
