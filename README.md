@@ -73,3 +73,6 @@ PhoneGap
 		);
 	}
 ```
+#分享插件
+[参考](http://bbs.phonegap100.com/forum.php?mod=viewthread&tid=885&highlight=phonegap%2B%E5%88%86%E4%BA%AB)  
+[下载](http://dev.umeng.com/social/phonegap/share/quick-integration)
