@@ -76,4 +76,46 @@ PhoneGap
 #分享插件
 [参考](http://bbs.phonegap100.com/forum.php?mod=viewthread&tid=885&highlight=phonegap%2B%E5%88%86%E4%BA%AB)  
 [下载](http://dev.umeng.com/social/phonegap/share/quick-integration)
-##andorid 插件调用与配置
+##andorid 插件调用与配置(base_plus.html)
+在src目录下新建一个class[com.example.phonegap.plugin(名字任意，类名大写)]
+导入
+```php
+import org.apache.cordova.api.CallbackContext;
+import org.apache.cordova.api.CordovaPlugin;
+import org.apache.cordova.api.PluginResult;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+```
+让你的类继承
+```php
+public class HelloWorld extends CordovaPlugin {
+    @Override
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        if (action.equals("echo")) {
+            String message = args.getString(0);
+            message = message+"你好";
+            this.echo(message, callbackContext);
+            return true;
+        }else{
+        	 callbackContext.error("失败！");
+        	  return false;
+        }
+      
+    }
+
+    private void echo(String message, CallbackContext callbackContext) {
+        if (message != null && message.length() > 0) {
+            callbackContext.success(message);
+        } else {
+            callbackContext.error("Expected one non-empty string argument.");
+        }
+    }
+}
+```
+注册插件( res/xml/)
+```php
+<feature name="HelloWord">
+<param name="android-package" value="org.apache.cordova.helloword.HelloWord"/>
+</feature>
+```
