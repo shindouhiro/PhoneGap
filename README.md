@@ -77,7 +77,8 @@ PhoneGap
 [参考](http://bbs.phonegap100.com/forum.php?mod=viewthread&tid=885&highlight=phonegap%2B%E5%88%86%E4%BA%AB)  
 [下载](http://dev.umeng.com/social/phonegap/share/quick-integration)
 ##andorid 插件调用与配置(base_plus.html)
-在src目录下新建一个class[com.example.phonegap.plugin(名字任意，类名大写)]
+在src目录下新建一个class[com.example.phonegap.plugin(名字任意，类名大写)]  
+
 导入
 ```php
 import org.apache.cordova.api.CallbackContext;
