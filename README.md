@@ -120,3 +120,4 @@ public class HelloWorld extends CordovaPlugin {
 <param name="android-package" value="org.apache.cordova.helloword.HelloWord"/>
 </feature>
 ```
+[插件一览](http://plugins.cordova.io/#/viewAll)
